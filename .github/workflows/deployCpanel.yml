@@ -28,7 +28,7 @@ jobs:
         lftp -c "
         set ftp:ssl-allow no;
         open -u $FTP_USERNAME,$FTP_PASSWORD $FTP_SERVER;
-        mirror --reverse --only-newer --verbose ./html/wp-content/ /home/r35d6o4d/faf.insign-africa.com/html/wp-content;
+        mirror --reverse --verbose --no-perms --no-delete --only-newer ./html/wp-content/ /home/r35d6o4d/faf.insign-africa.com/html/wp-content;
         "
 
         # local-dir: ./html/wp-content/
