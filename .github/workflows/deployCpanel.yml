@@ -17,5 +17,5 @@ jobs:
         server: ${{ secrets.FTP_SERVEUR }}
         username: ${{ secrets.FTP_USERNAME }}
         password: ${{ secrets.FTP_PASSWORD }}
-        local-dir: wp-content
-        server-dir: /home/r35d6o4d/faf.insign-africa.com/html/wp-content
+        local-dir: wp-content/
+        server-dir: /home/r35d6o4d/faf.insign-africa.com/html/wp-content/
