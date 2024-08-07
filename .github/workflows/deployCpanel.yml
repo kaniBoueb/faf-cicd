@@ -6,7 +6,7 @@ on:
 jobs:
   web-deploy:
     name: 🎉 Déploiement
-    runs-on: self-hosted
+    runs-on: ubuntu-latest
     steps:
     - name: 🚚 Obtenir le code le plus récent
       uses: actions/checkout@v3
