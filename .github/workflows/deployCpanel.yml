@@ -10,14 +10,11 @@ jobs:
     steps:
     - name: 🚚 Obtenir le code le plus récent
       uses: actions/checkout@v3
-
-    - name: Installer lftp
-      run: sudo apt-get install lftp
     
     # - name: 📂 Synchronisation des fichiers
       # uses: SamKirkland/FTP-Deploy-Action@v4.3.4
     - name: Installer lftp
-      run: sudo apt-get install lftp
+      run: sudo apt-get install -y lftp
 
     - name: Synchroniser les fichiers modifiés avec lftp
       env:
@@ -28,7 +25,7 @@ jobs:
         lftp -c "
         set ftp:ssl-allow no;
         open -u $FTP_USERNAME,$FTP_PASSWORD $FTP_SERVER;
-        mirror --reverse --verbose --no-perms --no-delete --only-newer ./html/wp-content/ /home/r35d6o4d/faf.insign-africa.com/html/wp-content;
+        mirror --reverse --verbose --only-newer --no-perms --ignore-time --parallel=5 ./html/wp-content/ /home/r35d6o4d/faf.insign-africa.com/html/wp-content;
         "
 
         # local-dir: ./html/wp-content/
