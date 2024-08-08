@@ -6,27 +6,16 @@ on:
 jobs:
   web-deploy:
     name: 🎉 Déploiement
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
     steps:
     - name: 🚚 Obtenir le code le plus récent
       uses: actions/checkout@v3
     
-    # - name: 📂 Synchronisation des fichiers
-      # uses: SamKirkland/FTP-Deploy-Action@v4.3.4
-    - name: Installer lftp
-      run: sudo apt-get install -y lftp
-
-    - name: Synchroniser les fichiers modifiés avec lftp
-      env:
-        FTP_SERVER: ${{ secrets.FTP_SERVEUR }}
-        FTP_USERNAME: ${{ secrets.FTP_USERNAME }}
-        FTP_PASSWORD: ${{ secrets.FTP_PASSWORD }}
-      run: |
-        lftp -c "
-        set ftp:ssl-allow no;
-        open -u $FTP_USERNAME,$FTP_PASSWORD $FTP_SERVER;
-        mirror --reverse --verbose --only-newer --no-perms --ignore-time --parallel=5 ./html/wp-content/ /home/r35d6o4d/faf.insign-africa.com/html/wp-content;
-        "
-
-        # local-dir: ./html/wp-content/
-        # server-dir: /home/r35d6o4d/faf.insign-africa.com/html/wp-content
+    - name: 📂 Synchronisation des fichiers
+      uses: SamKirkland/FTP-Deploy-Action@v4.3.4
+      with:
+        server: ${{ secrets.FTP_SERVEUR }}
+        username: ${{ secrets.FTP_USERNAME }}
+        password: ${{ secrets.FTP_PASSWORD }}
+        local-dir: ./html/wp-content/
+        server-dir: /home/r35d6o4d/faf.insign-africa.com/wp-content

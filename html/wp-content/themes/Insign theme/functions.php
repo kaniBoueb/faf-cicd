@@ -10,7 +10,7 @@
  */
 
 // This theme requires WordPress 5.3 or later.
-if ( version_compare( $GLOBALS['wp_version'], '5.3', '<' ) ) {
+if ( version_compare( $GLOBALS['wp_version'], '6.0', '<' ) ) {
 	require get_template_directory() . '/inc/back-compat.php';
 }
 
@@ -655,60 +655,3 @@ if ( ! function_exists( 'wp_get_list_item_separator' ) ) :
 	}
 endif;
 
-// Mon filtre
-add_action('wp_ajax_voiturefilter', 'voiture_filter_function'); 
-add_action('wp_ajax_nopriv_voiturefilter', 'voiture_filter_function');
-
-
-function update_cpt_json_file() {
-    // Récupérer les données du Custom Post Type
-    $args = array(
-        'post_type' => 'voiture', // Remplacez "voiture" par le nom de votre CPT
-        'posts_per_page' => -1,
-    );
-    $query = new WP_Query($args);
-    $posts = $query->posts;
-
-    // Structure JSON
-    $json_data = array();
-
-    // Parcourir les messages du CPT
-    foreach ($posts as $post) {
-        // Récupérer les données nécessaires pour chaque message
-        $terms_marque = wp_get_post_terms($post->ID, 'marque'); // Récupérer les termes de la taxonomie "marque"
-        $terms_modele = wp_get_post_terms($post->ID, 'modele'); // Récupérer les termes de la taxonomie "modele"
-        $terms_categorie = wp_get_post_terms($post->ID, 'categorie'); // Récupérer les termes de la taxonomie "categorie"
-
-        // Assurer qu'il y a au moins un terme pour chaque taxonomie
-        if (!empty($terms_marque) && !empty($terms_modele) && !empty($terms_categorie)) {
-            // Récupérer les noms des termes
-            $marque = $terms_marque[0]->name;
-            $modele_name = $terms_modele[0]->name;
-            $modele_categorie = $terms_categorie[0]->name;
-
-            // Ajouter les données à la structure JSON, regroupées par marque
-            if (!isset($json_data[$marque])) {
-                $json_data[$marque] = array();
-            }
-            $json_data[$marque][] = array(
-                'name' => $modele_name,
-                'categorie' => $modele_categorie,
-            );
-        }
-    }
-
-    // Chemin du fichier JSON
-    $json_file_path = '/wp-content/themes/insign/data-car/auto-car.json'; // Remplacez par le chemin de votre fichier JSON
-
-    // Enregistrer le contenu JSON dans le fichier
-    if (is_writable($json_file_path)) {
-        file_put_contents($json_file_path, json_encode($json_data, JSON_PRETTY_PRINT));
-    } else {
-        // Gérer les erreurs d'écriture du fichier
-        error_log('Impossible d\'écrire dans le fichier JSON.');
-    }
-}
-
-// Ajouter des actions pour mettre à jour le fichier JSON lorsque le CPT est ajouté, mis à jour ou supprimé
-// add_action('save_post_voiture', 'update_cpt_json_file', 10, 3);
-// add_action('delete_post_voiture', 'update_cpt_json_file', 10, 3);
