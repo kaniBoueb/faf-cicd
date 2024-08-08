@@ -14,11 +14,6 @@ get_header();
 /* Start the Loop */
 while ( have_posts() ) :
 	the_post();
-	get_template_part( 'template-parts/inclusion/page-hero' );
-	get_template_part( 'template-parts/inclusion/content-single' );
-	get_template_part( 'template-parts/inclusion/catalogue' );
-	get_template_part( 'template-parts/inclusion/les-conseils' );
-	get_template_part( 'template-parts/inclusion/news' );
 	
 endwhile; // End of the loop.
 

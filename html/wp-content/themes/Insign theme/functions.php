@@ -656,16 +656,13 @@ if ( ! function_exists( 'wp_get_list_item_separator' ) ) :
 endif;
 
 // Custom Kani
-add_action('admin_menu', 'infd_admin_menu');
 
-function infd_admin_menu() {
-    add_menu_page(
-        'Infos & détails du site',
-        'Infos & détails du site',
-        'manage_options',
-		'dashicons-info',
-        3                  
-        // 'fs-form-submissions',
-        // 'fs_display_submissions'
-    );
+if( function_exists('acf_add_options_page') ) {
+    acf_add_options_page(array(
+        'page_title' => 'Infos & détails du site',
+        'menu_title' => 'Infos & détails du site',
+        'menu_slug'  => 'site-infos',
+        'capability' => 'edit_posts',
+        'redirect'   => false
+    ));
 }
