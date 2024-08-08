@@ -1,6 +1,6 @@
-# Kani BOUEBASSIHOU 
+# Hello 👋🏽 Je suis Kani BOUEBASSIHOU -- kboueb 😉
 
-# 📦 Projet WordPress avec Docker et ACF
+# 📦 Projet WordPress avec Docker - Guntenberg - ACF
 
 Ce projet est un environnement WordPress développé avec Docker, incluant des configurations spécifiques pour gérer la personnalisation de thème et la création de blocs gutenberg avec les fichiers JSON d'Advanced Custom Fields (ACF). Ce guide vous aidera à configurer, développer et déployer le projet.
 
