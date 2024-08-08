@@ -23,14 +23,12 @@
     <link rel="stylesheet"  href="<?php echo get_stylesheet_directory_uri(); ?>/assets/css/fonts/fonts.css" media="all" />
     <link rel="stylesheet"  href="<?php echo get_stylesheet_directory_uri(); ?>/assets/css/swiper-bundle.min.css" media="all" />
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11.0.6/swiper-bundle.min.css">
-	<link rel="stylesheet"  href="<?php echo get_stylesheet_directory_uri(); ?>/assets/css/insign.css" media="all" />
 	<link rel="stylesheet"  href="<?php echo get_stylesheet_directory_uri(); ?>/assets/css/custom.css" media="all" />
+	<link rel="stylesheet"  href="<?php echo get_stylesheet_directory_uri(); ?>/assets/css/insign.css" media="all" />
 	<?php wp_head(); ?>
     <link rel="stylesheet"  href="<?php echo get_stylesheet_directory_uri(); ?>/style.css" media="all" />
 	<link rel="stylesheet"  href="<?php echo get_stylesheet_directory_uri(); ?>/assets/css/responsive.css" media="all" />
-    <!-- <script id="Cookiebot" src="https://consent.cookiebot.com/uc.js?cbid=f0bdde85-5a98-4cba-bd69-6f26b411577b" data-blockingmode="auto" type="text/javascript"></script> -->
-    <script src="https://cdn.jsdelivr.net/npm/pdfjs-dist@2.7.570/build/pdf.min.js"></script>
-
+	<script src="https://cdn.tailwindcss.com"></script>
 </head>
 
 <body <?php body_class(); ?>>

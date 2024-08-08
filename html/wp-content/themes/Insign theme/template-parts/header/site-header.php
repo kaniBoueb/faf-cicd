@@ -45,16 +45,6 @@ $style_bandeau = '';
 	<div class="container brand-nav-ctnr d-flex">
 		<?php get_template_part( 'template-parts/header/site-branding' ); ?>
 		<?php get_template_part( 'template-parts/header/site-nav' ); ?>
-		<div class="call-us d-flex ak-desk">
-			<img src="<?=get_field('logo_whatsapp',$home_pg)?>" alt="whatsapp">
-			<div class="les-infos">
-				<span class="texte-gris f-16 text-light"><?=get_field('texte_whatsapp',$home_pg)?></span>
-				<span class="texte-vert f-13 text-bold"><?=get_field('numero_whatsapp',$home_pg)?></span>
-			</div>
-		</div>
-		<div class="lang ak-chargement">
-			<?php echo qtranxf_generateLanguageSelectCode('dropdown'); ?>
-		</div>
 	</div>
 
 </header><!-- #masthead -->

@@ -6,9 +6,6 @@
  * @subpackage Insign
  * @since Insign 1.0
  */
-$home_pg = 10;
-$titre_site = "Autorent Occasion";
-
 ?>
 
 <?php if ( has_nav_menu( 'primary' ) ) : ?>
@@ -67,13 +64,13 @@ endif;?>
 					?>
 				</nav>
 			<?php endif;?>
-			<div class="call-us d-flex">
+			<!-- <div class="call-us d-flex">
 				<img src="<?=get_field('logo_whatsapp',$home_pg)?>" alt="whatsapp">
 				<div class="les-infos">
 					<span class="texte-gris f-16 text-light"><?=get_field('texte_whatsapp',$home_pg)?></span>
 					<span class="texte-vert f-13 text-bold"><?=get_field('numero_whatsapp',$home_pg)?></span>
 				</div>
-			</div>
+			</div> -->
 		</div>
 	</div>
 </div>

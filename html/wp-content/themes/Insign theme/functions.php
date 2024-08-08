@@ -9,6 +9,9 @@
  * @since Insign 1.0
  */
 
+// Inclusion des blocks gutenberg
+require_once('library/acf_blocks.php');
+
 // This theme requires WordPress 5.3 or later.
 if ( version_compare( $GLOBALS['wp_version'], '6.0', '<' ) ) {
 	require get_template_directory() . '/inc/back-compat.php';
@@ -659,7 +662,7 @@ endif;
 
 if( function_exists('acf_add_options_page') ) {
     acf_add_options_page(array(
-        'page_title' => 'Infos & détails du site',
+        // 'page_title' => 'Infos & détails du site',
         'menu_title' => 'Infos & détails du site',
         'menu_slug'  => 'site-infos',
         'capability' => 'edit_posts',

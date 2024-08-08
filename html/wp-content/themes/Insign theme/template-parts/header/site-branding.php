@@ -14,6 +14,10 @@ $header_class = $show_title ? 'site-title' : 'screen-reader-text';
 
 ?>
 
-<?php if ( has_custom_logo() ) : ?>
-	<div class="site-logo w15"><?php the_custom_logo(); ?></div>
-<?php endif; ?>
+<?php //if ( has_custom_logo() ) : ?>
+	<div class="site-logo w15">
+		<a href="/">
+			<img src="<?= get_field('logo_site', 'option')['url']; ?>" alt="Logo du site">
+		</a>
+	</div>
+<?php //endif; ?>

@@ -14,11 +14,7 @@ get_header();
 /* Start the Loop */
 while ( have_posts() ) :
 	the_post();
-	get_template_part( 'template-parts/inclusion/page-hero' );
-	get_template_part( 'template-parts/inclusion/content-page' );
-	get_template_part( 'template-parts/inclusion/catalogue' );
-	get_template_part( 'template-parts/inclusion/les-conseils' );
-	get_template_part( 'template-parts/inclusion/news' );
+	get_template_part( 'template-parts/content/content-page' );
 
 	// If comments are open or there is at least one comment, load up the comment template.
 	if ( comments_open() || get_comments_number() ) {
