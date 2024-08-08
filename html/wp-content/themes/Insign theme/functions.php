@@ -658,7 +658,8 @@ if ( ! function_exists( 'wp_get_list_item_separator' ) ) :
 	}
 endif;
 
-// Custom Kani
+// Mes fonctions perso
+// kboueb Custom
 
 if( function_exists('acf_add_options_page') ) {
     acf_add_options_page(array(
@@ -669,3 +670,23 @@ if( function_exists('acf_add_options_page') ) {
         'redirect'   => false
     ));
 }
+
+// kboueb ACF Synchronisation
+add_filter('acf/settings/save_json', 'my_acf_json_save_point');
+function my_acf_json_save_point( $path ) {
+    // Modifiez le chemin pour sauvegarder les fichiers JSON dans votre thème
+    $path = get_stylesheet_directory() . '/acf-json';
+    return $path;
+}
+
+add_filter('acf/settings/load_json', 'my_acf_json_load_point');
+function my_acf_json_load_point( $paths ) {
+    // Déplacez l'index original
+    unset($paths[0]);
+
+    // Ajoutez votre chemin de chargement personnalisé
+    $paths[] = get_stylesheet_directory() . '/acf-json';
+
+    return $paths;
+}
+
