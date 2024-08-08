@@ -1,0 +1,79 @@
+.correctif .liste-actus {
+    height: auto;
+}
+
+.correctif .liste-actus .une-actu {
+    width: 32%;
+    display: inline-block;
+    background-color: #fff;
+    padding-top: 0;
+    margin-bottom: 30px;
+    vertical-align: top;
+    min-height: 280px;
+}
+
+.correctif .liste-actus .une-actu div.pad {
+    display: block;
+}
+
+.correctif .liste-actus .une-actu div.pad div.vignette {
+    width: 100%;
+    height: 165px;
+}
+
+.page-id-3369.correctif .liste-actus .une-actu div.pad div.vignette, .page-id-3536.correctif .liste-actus .une-actu div.pad div.vignette {
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.correctif .liste-actus .une-actu .pad .infos .titre {
+    width: 100%;
+    min-height: 45px;
+}
+
+.correctif .liste-actus .une-actu .pad .infos {
+    width: 100%;
+    padding: 10px 15px;
+    min-height: 110px;
+}
+
+.correctif .liste-actus .une-actu .pad .infos .titre a {
+    font-size: 14px;
+    text-transform: initial;
+}
+
+.correctif .quick-content li::before {
+    display: none;
+}
+
+.correctif .quick-content .autre-proj li::before {
+    display: block;
+}
+
+.correctif .quick-nav, 
+.correctif .quick-content {
+    padding-top: 20px;
+}
+
+.correctif .section-batailles {
+    padding: 25px 0;
+}
+
+
+
+/* Responsive  */
+@media (max-width: 767px) {
+    .correctif .liste-actus .une-actu {
+        width: 100%;
+    }
+
+    .correctif .liste-actus .une-actu div.pad div.vignette {
+        width: 100%;
+        height: auto;
+    }
+
+    .correctif div#mCSB_1_scrollbar_vertical {
+        display: none !important;
+    }
+}

@@ -1,0 +1,57 @@
+@font-face {
+    font-family: 'SF-Pro-Text-Regular';
+    src: url('SF-Pro-Text-Regular.eot');
+    src: url('SF-Pro-Text-Regular.eot?#iefix') format('embedded-opentype'),
+         url('SF-Pro-Text-Regular.otf') format('otf'),
+         url('SF-Pro-Text-Regular.svg#SF-Pro-Text-Regular') format('svg'),
+         url('SF-Pro-Text-Regular.ttf') format('truetype'),
+         url('SF-Pro-Text-Regular.woff') format('woff'),
+         url('SF-Pro-Text-Regular.woff2') format('woff2');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+  
+@font-face {
+    font-family: 'SF-Pro-Text-Heavy';
+    src: url('SF-Pro-Text-Heavy.eot');
+    src: url('SF-Pro-Text-Heavy.eot?#iefix') format('embedded-opentype'),
+         url('SF-Pro-Text-Heavy.otf') format('otf'),
+         url('SF-Pro-Text-Heavy.svg#SF-Pro-Text-Heavy') format('svg'),
+         url('SF-Pro-Text-Heavy.ttf') format('truetype'),
+         url('SF-Pro-Text-Heavy.woff') format('woff'),
+         url('SF-Pro-Text-Heavy.woff2') format('woff2');
+    font-weight: black;
+    font-style: normal;
+    font-display: swap;
+}
+  
+@font-face {
+    font-family: 'SF-Pro-Text-Bold';
+    src: url('SF-Pro-Text-Bold.eot');
+    src: url('SF-Pro-Text-Bold.eot?#iefix') format('embedded-opentype'),
+         url('SF-Pro-Text-Bold.otf') format('otf'),
+         url('SF-Pro-Text-Bold.svg#SF-Pro-Text-Bold') format('svg'),
+         url('SF-Pro-Text-Bold.ttf') format('truetype'),
+         url('SF-Pro-Text-Bold.woff') format('woff'),
+         url('SF-Pro-Text-Bold.woff2') format('woff2');
+    font-weight: black;
+    font-style: normal;
+    font-display: swap;
+}
+  
+
+@font-face {
+    font-family: 'SF-Pro-Text-Light';
+    src: url('SF-Pro-Text-Light.eot');
+    src: url('SF-Pro-Text-Bold.eot?#iefix') format('embedded-opentype'),
+         url('SF-Pro-Text-Light.otf') format('otf'),
+         url('SF-Pro-Text-Light.svg#SF-Pro-Text-Light') format('svg'),
+         url('SF-Pro-Text-Light.ttf') format('truetype'),
+         url('SF-Pro-Text-Light.woff') format('woff'),
+         url('SF-Pro-Text-Light.woff2') format('woff2');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+  
