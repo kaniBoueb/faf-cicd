@@ -18,4 +18,4 @@ jobs:
         username: ${{ secrets.FTP_USERNAME }}
         password: ${{ secrets.FTP_PASSWORD }}
         local-dir: ./html/wp-content/
-        server-dir: /home/r35d6o4d/faf.insign-africa.com/wp-content
+        server-dir: /home/r35d6o4d/faf.insign-africa.com/wp-content/
